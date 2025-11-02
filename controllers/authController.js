@@ -29,12 +29,10 @@ const postRegister = async (req, res) => {
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
-    res.render("message", {
-      title: "Registration Successful",
-      message:
-        "Your account has been created successfully! You can now log in.",
-      backLink: "/auth/login",
+    res.render("auth/login", {
+    title: "Login",
     });
+
   } catch (err) {
     console.error(err);
     res.render("message", {
