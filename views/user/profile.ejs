@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ✅ Include shared head partial -->
+  <%- include('../partials/head', { title: 'Your Profile - Demo App' }) %>
+
+  <body class="bg-gray-100 min-h-screen text-gray-800 font-[Inter]">
+    <!-- ✅ Include shared navbar -->
+    <%- include('../partials/navbar') %>
+
+    <!-- Profile Section -->
+    <section class="flex justify-center items-center py-16 px-4">
+      <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md text-center transition transform hover:scale-[1.01]">
+        <h2 class="text-3xl font-bold text-indigo-600 mb-6">Your Profile</h2>
+
+        <% if (user) { %>
+          <!-- ✅ User Info -->
+          <div class="text-left space-y-4">
+            <p>
+              <span class="font-semibold text-gray-700">Name:</span>
+              <%= user.name %>
+            </p>
+            <p>
+              <span class="font-semibold text-gray-700">Email:</span>
+              <%= user.email %>
+            </p>
+          </div>
+
+          <!-- ✅ Buttons -->
+          <div class="mt-8 space-y-3">
+            <a
+              href="/"
+              class="block bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition"
+            >
+              ← Back to Home
+            </a>
+
+            <a
+              href="/auth/logout"
+              class="block bg-red-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-600 transition"
+            >
+              Logout
+            </a>
+          </div>
+        <% } else { %>
+          <!-- ⚠️ If user not logged in -->
+          <p class="text-gray-600 mb-6">
+            You must be logged in to view your profile.
+          </p>
+          <a
+            href="/auth/login"
+            class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition"
+          >
+            Go to Login
+          </a>
+        <% } %>
+      </div>
+    </section>
+  </body>
+</html>

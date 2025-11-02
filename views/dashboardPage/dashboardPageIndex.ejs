@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ✅ Include shared head partial -->
+  <%- include('../partials/head', { title: 'Dashboard - Demo App' }) %>
+
+  <body class="bg-gray-100 min-h-screen text-gray-800 font-[Inter]">
+    <!-- ✅ Include shared navbar -->
+    <%- include('../partials/navbar') %>
+
+    <!-- Dashboard Container -->
+    <div class="max-w-6xl mx-auto mt-12 p-8 bg-white shadow-2xl rounded-2xl">
+      <!-- Welcome message -->
+      <h2 class="text-3xl font-bold text-indigo-600 mb-8">
+        Welcome to Your Dashboard, <%= user ? user.name : 'Guest' %> 👋
+      </h2>
+
+      <!-- Dashboard Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Movies -->
+        <a
+          href="/dashboard/movie"
+          class="p-6 border rounded-lg hover:shadow-lg hover:bg-indigo-50 transition bg-gray-50"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+            🎬 <span class="ml-2">Movies</span>
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Browse and manage your favorite movies.
+          </p>
+        </a>
+
+        <!-- Imitation -->
+        <a
+          href="/dashboard/imitation"
+          class="p-6 border rounded-lg hover:shadow-lg hover:bg-indigo-50 transition bg-gray-50"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+            🎭 <span class="ml-2">Imitation</span>
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Explore creative imitations and performances.
+          </p>
+        </a>
+
+        <!-- Recitation -->
+        <a
+          href="/dashboard/recitation"
+          class="p-6 border rounded-lg hover:shadow-lg hover:bg-indigo-50 transition bg-gray-50"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+            📖 <span class="ml-2">Recitation</span>
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Discover and share your recitations.
+          </p>
+        </a>
+
+        <!-- Optional: Favorites -->
+        <a
+          href="/dashboard/favorites"
+          class="p-6 border rounded-lg hover:shadow-lg hover:bg-indigo-50 transition bg-gray-50"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+            ❤️ <span class="ml-2">Favorites</span>
+          </h3>
+          <p class="text-gray-600 text-sm">
+            View your saved favorite movies or performances.
+          </p>
+        </a>
+
+        <!-- Optional: Settings -->
+        <a
+          href="/dashboard/settings"
+          class="p-6 border rounded-lg hover:shadow-lg hover:bg-indigo-50 transition bg-gray-50"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+            ⚙️ <span class="ml-2">Settings</span>
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Manage your account preferences and privacy.
+          </p>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
